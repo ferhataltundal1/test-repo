@@ -1,0 +1,197 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  max-width: 800px;
+  width: 100%;
+  height: 500px;
+  box-shadow: 0 0 14px #d8d8d8;
+  border-radius: 20px;
+  padding: 15px;
+  margin: 1rem;
+
+  .left-field-box {
+    max-width: 300px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(14, 82, 226);
+    border-radius: 15px;
+  }
+  .right-field-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    .login-filed {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      padding: 1rem 2rem;
+      .login-title-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+        > h1 {
+          font-size: 1.5em;
+        }
+        > span {
+          font-size: 0.9em;
+        }
+      }
+      .login-input-field {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 100%;
+        padding: 0.5rem;
+        gap: 0.5rem 0;
+        margin: 0.3rem 0;
+        > label {
+          color: #646464;
+        }
+        .input-text {
+          width: 100%;
+          height: 35px;
+          border: 1px solid #bdbcbc;
+          outline: none;
+          border-radius: 5px;
+          font-size: 1.1em;
+          color: #464545;
+          padding: 0.3rem 0.6rem;
+          letter-spacing: 2px;
+          &:focus {
+            border: 1px solid rgb(14, 82, 226);
+          }
+        }
+        .input-checkbox {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 0.4rem 0;
+          > label {
+            font-family: Helvetica;
+            letter-spacing: 1px;
+          }
+          @keyframes pull {
+            0% {
+              height: 0;
+            }
+            100% {
+              height: 1.2rem;
+            }
+          }
+
+          @keyframes pop {
+            0% {
+              opacity: 0;
+            }
+            75% {
+              opacity: 1;
+            }
+            100% {
+              transform: scale(1.2);
+            }
+          }
+
+          .checkbox-flip {
+            display: none;
+          }
+          .checkbox-flip + label span {
+            display: inline-block;
+            width: 25px;
+            height: 19px;
+            margin: 0 5px -4px 0;
+            &:before,
+            &:after {
+              transition: all 0.3s ease-in-out;
+              content: "";
+              position: absolute;
+              z-index: 1;
+              width: 1rem;
+              height: 1rem;
+              background: transparent;
+              border: 2px solid rgb(14, 82, 226);
+            }
+            &:after {
+              z-index: 0;
+              border: none;
+            }
+          }
+          .checkbox-flip:checked + label span {
+            &:before {
+              transform: rotateY(180deg);
+              background: rgb(14, 82, 226);
+            }
+          }
+          .checkbox-pop:checked + label span {
+            &:before {
+              animation: pop 0.3s ease;
+              z-index: 100;
+              background: rgb(14, 82, 226);
+            }
+          }
+          .checkbox-pull:checked + label span {
+            &:after {
+              width: 1.2rem;
+              height: 1.2rem;
+              background: rgb(14, 82, 226);
+              animation: pull 0.4s linear;
+            }
+          }
+          .checkbox-spin:checked + label span {
+            &:before {
+              transform: rotateZ(180deg);
+              background: rgb(14, 82, 226);
+            }
+          }
+        }
+        .button-container {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 0.4rem;
+          > button {
+            max-width: 120px;
+            width: 100%;
+            height: 40px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            background-color: rgb(14, 82, 226);
+            padding: 0.2rem 1rem;
+            color: #fff;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .login-container {
+    width: 100%;
+    max-width: 100%;
+    .left-field-box {
+      display: none;
+    }
+    .right-field-box {
+      align-items: center;
+      .login-filed {
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

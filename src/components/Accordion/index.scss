@@ -1,0 +1,28 @@
+.accordion-container {
+  max-width: 200px;
+  width: 100%;
+  max-height: 50px;
+  height: auto;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+.accordion-title {
+  width: 100%;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: rgb(17, 84, 230);
+  border-radius: 10px;
+}
+.accordion-content {
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  margin-top: 0.2rem;
+  border-radius: 10px;
+  background-color: rgb(10, 52, 143);
+  color: #fff;
+}

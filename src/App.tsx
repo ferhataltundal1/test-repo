@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useCallback, useContext, useState } from "react";
+import Accordion from "./components/Accordion";
+import { ThemeProvider, ThemeContext } from "./context/ThemeContext";
 
-function App() {
+const App = () => {
+  const useTheme = useContext(ThemeContext);
+  const [theme, setTheme] = useState(useTheme);
+
+  console.log(theme);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <div
+        className="page"
+        style={{
+          width: "100%",
+          height: "100vh",
+          background: `${theme ? "#000" : "#fff"}`,
+        }}
+      >
+        <button onClick={() => setTheme((p) => !p)}>Click</button>
+      </div>
+    </ThemeProvider>
   );
-}
-
+};
 export default App;
