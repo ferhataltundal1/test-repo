@@ -6,7 +6,6 @@
 body {
   width: 100%;
   height: 100%;
-
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -15,17 +14,36 @@ body {
   overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body.theme_1 {
+  background-color: #fff;
+  color: #353535;
+  transition: all 0.2s ease-in-out;
 }
-
+body.theme_2 {
+  background-color: #353535;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+body.theme_3 {
+  background-color: #ff6600;
+  color: #000;
+  transition: all 0.2s ease-in-out;
+}
+body.theme_4 {
+  background-color: red;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+body.theme_5 {
+  background-color: green;
+  color: #000;
+  transition: all 0.2s ease-in-out;
+}
 .page {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 100vh;
   width: 100%;
-  padding: 0.5rem;
-  gap: 1rem 0;
 }

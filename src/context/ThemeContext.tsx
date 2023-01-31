@@ -1,12 +1,3 @@
-import { createContext, ReactNode } from "react";
+import { createContext } from "react";
 
-type Props = {
-  children: ReactNode;
-};
-export const ThemeContext = createContext<boolean>(false);
-
-export const ThemeProvider = ({ children }: Props) => {
-  return (
-    <ThemeContext.Provider value={false}>{children}</ThemeContext.Provider>
-  );
-};
+export const ThemeContext = createContext<any>(null);
